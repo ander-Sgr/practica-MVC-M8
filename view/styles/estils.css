@@ -1,0 +1,102 @@
+body {
+    width: 60%;
+    margin:30px auto;
+    font-family: Arial;
+    color: #212121;
+    background-color:  aliceblue;
+}
+
+table {
+    width: 100%;
+    background-color: #F0F0F0;
+}
+
+td {
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+
+input {
+    padding: 10px;
+    border: #E0E0E0 1px solid;
+    border-radius: 3px;
+    width: 250px;
+    margin: 5px 0px 10px 0px;
+}
+
+.botoEditar {
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.botoEsborrar {
+    cursor: pointer;
+}
+
+#botoAfegir {
+    padding: 6px 20px;
+    color: #212121;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    border: #212121 1px solid;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#botoAfegir img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#btnSubmit {
+    padding: 8px;
+    background: #09F;
+    border: #048eec 1px solid;
+    color: #FFF;
+    font-size: 0.9em;
+    border-radius: 3px;
+    width: 150px;
+}
+form {
+    border: #E0E0E0 1px solid;
+    padding: 10px 20px 20px 20px;
+    border-radius: 3px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form div label {
+    margin-left: 5px;
+}
+
+ul {
+    list-style: none;
+    margin: 0px 0px 40px 0px;
+    padding: 0px;
+    background: #E0E0E0;
+    border-radius: 3px;
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+ul li a{
+    color: #212121;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    text-decoration: underline;
+}
+
+
+.agregar{
+    text-align: right;
+    margin: 20px 0px 10px;
+}

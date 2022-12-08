@@ -11,7 +11,12 @@ class ControllerStudent{
         $this->model = new Student(Conection::instance());
     }
 
-    function index(){
-        
+    function showStudents(){
+        $data = $this->model->selectAll();
+        require_once("./view/mostrar.php");
+    }
+
+    function edit(){
+        require_once('view/edit.php');
     }
 }

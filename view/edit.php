@@ -1,4 +1,4 @@
-<?php include_once("./layouts/header.php"); ?>
+<?php include_once("layouts/header.php"); ?>
 <form action="">
     <div>
         <label>Nom</label>

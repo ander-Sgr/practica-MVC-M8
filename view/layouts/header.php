@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/estils.css">
+    <link rel="stylesheet" type="text/css" href="./view/styles/estils.css">
     <title>Document</title>
 </head>
 <body>
 <h1>PHP CRUD AMB POO I MVC</h1>
 <ul>
-    <li><a href="http://">Estudiant</a></li>
-    <li><a href="http://">Asistencia</a></li>
+    <li><a href="./index.php">Estudiant</a></li>
+    <li><a href="">Asistencia</a></li>
 </ul>

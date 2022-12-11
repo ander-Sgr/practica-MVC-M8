@@ -1,6 +1,10 @@
 <?php
-include_once("./model/Student.php");
-include_once("./model/Conection.php");
+
+use function PHPSTORM_META\type;
+
+include_once("model/Student.php");
+include_once("model/Conection.php");
+$controller = new ControllerStudent();
 
 
 class ControllerStudent{
@@ -17,6 +21,11 @@ class ControllerStudent{
     }
 
     function edit(){
-        require_once('view/edit.php');
+        $id = $_REQUEST['user'];
+        $idInt = (int) $id;
+        $data = $this->model->show("estudiant", "id=" . $id);
+        require_once('./view/edit.php');
     }
+
+    
 }

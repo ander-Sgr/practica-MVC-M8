@@ -12,10 +12,10 @@
             <label>Classe</label>
             <input type="text" name="classe" value="<?php echo $value['classe'] ?>"><br>
             <input type="hidden" name="id" value="<?php echo $value['id'] ?>" />
-            <input type="submit" name="btn" id="" value="GUARDAR">
+            <input type="submit" name="btn" id="btnSubmit" value="GUARDAR">
         <?php endforeach ?>
     <?php endforeach ?>
-    <input type="hidden" name="accio" value="guardar">
+    <input type="hidden" name="accio" value="updateStudent">
 </form>
 
 

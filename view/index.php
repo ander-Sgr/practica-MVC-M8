@@ -3,7 +3,7 @@
 ?>
 
 <div class="agregar">
-    <a href="" id="botoAfegir">
+    <a href="index.php?accio=viewAddStudent" id="botoAfegir">
         <img src="./resources/images/icon-add.png" alt="">
         Agregar Estudiant
     </a>

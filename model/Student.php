@@ -28,12 +28,32 @@ class Student
         return $data;
     }
 
-    public function updateStudent($data, $condicio){
+    public function updateStudent($data, $idUser)
+    {
         $rows = array();
         foreach ($data as $key => $value) {
             $rows[] = "$key = :$key";
         }
-        // todo es query parametrizada
+        $query = "UPDATE estudiant SET " . implode(', ', $rows) . " WHERE $idUser";
+        try {
+            $stm = $this->conn->prepare($query);
+            $stm->execute($data);
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
     }
 
+
+    public function insertStudent($data)
+    {
+        $keys = array_keys($data);
+        $query = "INSERT INTO estudiant (". implode(',', $keys) . ") "
+        . "VALUES(". ':' . implode(', :', $keys) . ")";
+        try {
+            $stm = $this->conn->prepare($data);
+            $stm->execute($data);
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
 }

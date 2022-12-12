@@ -10,9 +10,9 @@
 
 <body>
     <?php
-    include_once("./controller/ControllerStudent.php");
-    if (isset($_REQUEST['action'])) {
-        $method = $_REQUEST['action'];
+    include_once("controller/ControllerStudent.php");
+    if (isset($_REQUEST['accio'])) {
+        $method = $_REQUEST['accio'];
         if (method_exists($controller, $method)) {
             $controller->{$method}();
 

@@ -11,5 +11,5 @@
 <h1>PHP CRUD AMB POO I MVC</h1>
 <ul>
     <li><a href="./index.php">Estudiant</a></li>
-    <li><a href="">Asistencia</a></li>
+    <li><a href="index.php?accio=viewAssistence">Asistencia</a></li>
 </ul>

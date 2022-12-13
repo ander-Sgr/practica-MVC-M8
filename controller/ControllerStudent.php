@@ -35,16 +35,63 @@ class ControllerStudent
         );
         $idUser = "id=" . $id;
         $this->model->updateStudent($arrData, $idUser);
-        header("location: http://practica-mvc-m8.test/");
+        header("location: http://localhost/practica-MVC-M8/");
     }
 
-    function viewAddStudent(){
+    function viewAddStudent()
+    {
         require_once('view/addStudent.php');
     }
 
-    function insertStudiant(){
-        $date = $_POST['date'];
-        $dateFormated = date("Y-m-d", $date);
-        $data = array("nom" => $_GET['nom'])
+    function insertStudent()
+    {
+
+        $dateFormated = date("Y-m-d", strtotime($_GET['date']));
+        $arrData = array(
+            "nom" => $_GET['nom'],
+            "matricula" => $_GET['matricula'],
+            "data" => $dateFormated,
+            "classe" => $_GET['class']
+        );
+        $data = $this->model->insertStudent($arrData);
+        header("location: http://localhost/practica-MVC-M8/");
+    }
+    // assistencia 
+    function viewAssistence()
+    {
+        $data = $this->model->showAssistence();
+        require_once('view/assistence.php');
+    }
+
+    function addAssistence()
+    {
+        $data = $this->model->showStudent("1");
+        require_once('view/addAssistence.php');
+    }
+
+    function insertAssistence()
+    {
+
+        $dateFormated = date("Y-m-d", strtotime($_GET['date']));
+        $valueAssist = $_GET['assistence'];
+        foreach ($valueAssist as $key => $value) {
+           // echo $value[0];
+            $arrData = array(
+                "present" => $value,
+                "absent" => 1- $value,
+                "data" => $dateFormated,
+                "estudiant_id" => $_GET['id']
+            );
+        }
+
+        /*$arrData = array(
+            "present" => $valueAssist[$key][$value],
+            "absent" => $valueAssist[$key][$value],
+            "data" => $dateFormated,
+            "estudiant_id" => $_GET['id']
+        );*/
+
+        $data = $this->model->insertAssistence($arrData);
+         header("location: http://localhost/practica-MVC-M8/?accio=viewAssistence");
     }
 }

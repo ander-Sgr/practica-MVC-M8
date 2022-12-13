@@ -1,6 +1,7 @@
-<?php require "layouts/header.php" ?>
+<?php require "layouts/header.php"
+?>
 
-<form method="POST" action="index.php">
+<form method="">
     <div>
         <label>Nom</label>
     </div>
@@ -26,7 +27,7 @@
         <input type="text" name="class" require>
     </div>
     <input type="submit" name="btn" value="Guardar">
-    <input type="hidden" name="action" value="insertStudent">
+    <input type="hidden" name="accio" value="insertStudent">
 </form>
 
 <?php require "layouts/footer.php" ?>

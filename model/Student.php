@@ -47,12 +47,36 @@ class Student
     public function insertStudent($data)
     {
         $keys = array_keys($data);
-        $query = "INSERT INTO estudiant (". implode(',', $keys) . ") "
-        . "VALUES(". ':' . implode(', :', $keys) . ")";
+        $query = "INSERT INTO estudiant (" . implode(',', $keys) . ") "
+            . "VALUES(" . ':' . implode(', :', $keys) . ")";
         try {
-            $stm = $this->conn->prepare($data);
+            $stm = $this->conn->prepare($query);
             $stm->execute($data);
         } catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
+
+
+    public function showAssistence()
+    {
+        $query = "select data, 
+                  SUM(present = 1) as num_present,
+                  SUM(absent = 1) as num_absent
+                from assistencia group by data";
+        $stm = $this->conn->prepare($query);
+        $stm->execute();
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insertAssistence($data)
+    {
+        $keys = array_keys($data);
+        $query = "INSERT INTO assistencia (" . implode(',', $keys) . ") VALUES(". ':' . implode(', :', $keys) .")";
+        try{
+            $stm = $this->conn->prepare($query);
+            $stm->execute($data);
+        }catch(PDOException $ex){
             echo $ex->getMessage();
         }
     }

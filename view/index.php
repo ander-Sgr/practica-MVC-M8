@@ -1,6 +1,4 @@
-<?php include_once("layouts/header.php");
-//  require_once("../controller/ControllerStudent.php");
-?>
+<?php include_once("layouts/header.php");?>
 
 <div class="agregar">
     <a href="index.php?accio=viewAddStudent" id="botoAfegir">

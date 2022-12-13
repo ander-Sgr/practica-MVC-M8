@@ -75,23 +75,15 @@ class ControllerStudent
         $dateFormated = date("Y-m-d", strtotime($_GET['date']));
         $valueAssist = $_GET['assistence'];
         foreach ($valueAssist as $key => $value) {
-           // echo $value[0];
             $arrData = array(
                 "present" => $value,
-                "absent" => 1- $value,
+                "absent" => 1 - $value,
                 "data" => $dateFormated,
                 "estudiant_id" => $_GET['id']
             );
+
+            $this->model->insertAssistence($arrData);
         }
-
-        /*$arrData = array(
-            "present" => $valueAssist[$key][$value],
-            "absent" => $valueAssist[$key][$value],
-            "data" => $dateFormated,
-            "estudiant_id" => $_GET['id']
-        );*/
-
-        $data = $this->model->insertAssistence($arrData);
-         header("location: http://localhost/practica-MVC-M8/?accio=viewAssistence");
+        header("location: http://localhost/practica-MVC-M8/?accio=viewAssistence");
     }
 }

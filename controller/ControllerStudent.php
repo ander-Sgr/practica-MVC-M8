@@ -79,11 +79,39 @@ class ControllerStudent
                 "present" => $value,
                 "absent" => 1 - $value,
                 "data" => $dateFormated,
-                "estudiant_id" => $_GET['id']
+                "estudiant_id" => $key
             );
 
             $this->model->insertAssistence($arrData);
         }
+        header("location: http://localhost/practica-MVC-M8/?accio=viewAssistence");
+    }
+
+    function editAssistence()
+    {
+        $dateAssistence = date("Y-m-d", strtotime($_REQUEST['dateAssis']));
+        $data = $this->model->showInfoAssistence($dateAssistence);
+        require_once('view/editAssistence.php');
+    }
+
+    function updateAssistence()
+    {
+        $idAlumne = $_REQUEST['id'];
+        $dateAssistence = date("Y-m-d", strtotime($_GET['date']));
+
+        $assistence = $_GET['assistence'];
+        foreach ($assistence as $key => $value) {
+            echo $value;
+            $arrData = array(
+                "present" =>  $value,
+                "absent" => 1-$value,
+            );
+            $condition = "estudiant_id={$key} AND data='{$dateAssistence}'";
+            echo $condition . "<br>";
+            $this->model->editAssistence($arrData, $condition);
+
+        }
+
         header("location: http://localhost/practica-MVC-M8/?accio=viewAssistence");
     }
 }

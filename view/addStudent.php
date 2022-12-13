@@ -26,7 +26,7 @@
     <div>
         <input type="text" name="class" require>
     </div>
-    <input type="submit" name="btn" value="Guardar">
+    <input type="submit" name="btn" id="btnSubmit" value="Guardar">
     <input type="hidden" name="accio" value="insertStudent">
 </form>
 
